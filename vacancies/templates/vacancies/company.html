@@ -4,14 +4,15 @@
 
   <main class="container mt-3">
     <div class="navbar mt-5">
-      <p><a href="javascript:history.go(-1)">Назад</a></p>
+      <p><a href="{{ back }}">Назад</a></p>
     </div>
     <section>
       <div class="text-center">
-        <img src="../static/{{ company.logo }}" width="130" height="80" alt="">
+        <img src="/media/{{ company.logo }}" width="130" height="80" alt="">
       </div>
       <h1 class="h1 text-center mx-auto mt-0 pt-1" style="font-size: 70px;"><strong>{{ company.name }}</strong></h1>
-      <p class="text-center pt-1">{{ company.description}} {{ company.location }}, {{ company.vacancies.count }} вакансий</p>
+        <p class="text-center pt-1">{{ company.description}}</p>
+        <p class="text-center pt-1">{{ company.location }}, {{ company.vacancies.count }} вакансий</p>
       <div class="row mt-5">
         {% for vacancy in vacancies %}
         <div class="col-12 col-lg-8 offset-lg-2 m-auto">
