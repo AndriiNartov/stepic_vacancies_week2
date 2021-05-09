@@ -8,11 +8,8 @@ from django.views.generic import CreateView, DetailView, ListView, UpdateView
 from vacancies.forms import ApplicationForm, CompanyForm, ResumeForm, VacancyForm
 from vacancies.models import Application, Company, Resume, Specialty, Vacancy
 
-import os
-
 
 class IndexView(ListView):
-    print(os.environ.get('AWS_STORAGE_BUCKET_NAME'))
     model = Specialty
     template_name = 'vacancies/index.html'
     context_object_name = 'specialties'
